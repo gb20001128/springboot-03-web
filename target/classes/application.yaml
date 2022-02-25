@@ -1,0 +1,17 @@
+spring:
+#  mvc:
+#    static-path-pattern: /res/**   #设置静态资源访问的前缀,要访问静态资源文件,必须是"项目+res+静态资源名 如1.jpg的路径是:localhost:8080/res/1.jpg
+
+  resources:
+  #    static-locations: [classpath:/abab/] #默认静态资源放在abab包下,要想访问到静态资源,必须是:localhost:8080/res/abab包下的资源(不知道为什么不行)
+  #    add-mappings= false 禁用掉对所有静态资源的访问
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true       #开启隐藏方法过滤器(开启之后,表单的隐藏域就能用啦)
+    contentnegotiation:
+      favor-parameter: true  #开启请求参数内容协商模式,只要在请求路径后加"?format=xxx",就可以指定客户端返回的媒体类型
+
+#server:
+  #servlet:
+   #context-path: /world    #整个项目的前置路径

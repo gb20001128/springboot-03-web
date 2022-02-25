@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <img width="100px" src="1.jpg"/>
+</div>
+    测试REST风格<br>
+<form action="/user" method="get">
+    <input value="REST-GET 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input value="REST-POST 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="delete"/>
+    <input name="_me" type="hidden" value="delete"/>
+    <input value="REST-DELETE 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="put"/>
+    <input value="REST-PUT 提交" type="submit"/>
+</form>
+<hr/>
+    测试基本注解
+    <a href="car/3/owner/lisi?age=17&inters=basketball&inters=gama">car/{id}/owner/{username}</a>
+<hr/>
+  <form action="/save" method="post">
+      测试@RequestBody获取数据 <br/>
+       用户名: <input name="userName"/> <br/>
+       邮箱:  <input name="email"/>    <br/>
+      <input type="submit" value="提交">
+  </form>
+<hr/>
+<a href="/cars/sell;low=34;brand=byd,audi,yd">测试@MatrixVariable(矩阵变量)1</a> <br/>
+<a href="/boss/1;age=20/2;age=10">测试@MatrixVariable(矩阵变量)2</a>
+<hr/>
+测试封装POJO:
+<form action="/saveuser" method="post">
+    姓名:<input name="userName" value="高波"/>    <br/>
+    年龄:<input name="age" value="18"/>           <br/>
+    生日:<input name="birth" value="2000/12/23"/> <br/>
+    <!--宠物姓名:<input name="pet.name" value="淘淘"/> <br/>
+    宠物年龄:<input name="pet.age" value="18">-->    <br/>
+    <input name="pet" value="阿毛,3">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
